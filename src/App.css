@@ -1,23 +1,74 @@
+@import-normalize;
+
 .app {
+  display: flex;
+  font-family: Serif;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.hero {
+  padding: 10em 0 3em;
+  background-image: url("/greeting.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.hero-text {
+  font-size: 6rem;
   text-align: center;
+  line-height: 0.8em;
+  color: #ffffff;
+  text-shadow: rgba(0, 0, 0, .4) 0 0 4px;
 }
 
-.app-logo {
-  height: 40vmin;
-  pointer-events: none;
+.summary {
+  padding: 8em 0 4em;
+  text-align: center;
+}
+.summary-text {
+  font-weight: bold;
+  font-size: 3rem;
+  letter-spacing: -3px;
+}
+.summary-text .amp {
+  font-size: .4em;
+}
+.summary-meta {
+  margin-top: 3em;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.poet {
+  padding: 8em 0;
+  text-align: center;
+  line-height: 1.8;
+  background: #fff9f9;
+}
+.poet-ref {
+  font-size: .8em;
+}
+
+.invite {
+  padding: 8em 0 4em;
+  text-align: center;
+}
+.invite-welcome {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.invite-welcome-han {
+  letter-spacing: -.07em;
+}
+.invite-message {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  line-height: 1.6;
+}
+.invite-party {
+  line-height: 1.6;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   /* animation's here */
-}
-
-.app-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
