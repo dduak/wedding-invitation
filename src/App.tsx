@@ -4,8 +4,10 @@ import './App.css';
 const App: React.FC = () => {
   return (
     <div className="app">
-      <Header/>
-      <WelcomeMessage/>
+      <Hero/>
+      <Summary/>
+      <Poet/>
+      <InviteMessage/>
       <Gallery/>
       <LocationInfo/>
       <GiftMoney/>
@@ -14,42 +16,71 @@ const App: React.FC = () => {
   );
 }
 
-
-const Header: React.FC = props => {
+const Hero: React.FC = props => {
   return (
-    <div>
-      Jinwoo & Hyesook
-      오진우 그리고 양혜숙
-
-      2020.09.27 SUN PM 02:00
-      아르테스웨딩
+    <div className="hero">
+      <div className="hero-text">
+        Jinwoo<br/>
+        &<br/>
+        Hyesook
+      </div>
     </div>
   )
 }
 
-const WelcomeMessage: React.FC = props => {
+const Summary: React.FC = props => {
   return (
-    <div>
+    <div className="summary">
+      <div className="summary-text">
+        오진우 <span className="amp">그리고</span> 양혜숙
+      </div>
+      <div className="summary-meta">
+        2020.09.27 SUN PM 02:00<br/>
+        아르테스웨딩
+      </div>
+    </div>
+  )
+}
 
-      사랑은 소유가 아니라 동행임을 아는 두 사람은
-      잡은 손을 놓지 않되 함부로 잡아 끌지 않을 것이며
-      서로의 두 눈을 고요히 바라보아
-      말하지 않아도 같은 쪽으로 걸어가리라
-      - 박미라 "아름다운 날에 부치다" 중
+const Poet: React.FC = props => {
+  return (
+    <div className="poet">
+      <p className="poet-text">
+        사랑은 소유가 아니라 동행임을 아는 두 사람은<br/>
+        잡은 손을 놓지 않되 함부로 잡아 끌지 않을 것이며<br/>
+        서로의 두 눈을 고요히 바라보아<br/>
+        말하지 않아도 같은 쪽으로 걸어가리라
+      </p>
+      <p className="poet-ref">- 박미라 "아름다운 날에 부치다" 중</p>
 
+    </div>
+  )
+}
 
-      2020. 09. 27
-      초대합니다
+const InviteMessage: React.FC = props => {
+  return (
+    <div className="invite">
+      <div className="invite-welcome">
+        2020. 09. 27<br/>
+        <span className="invite-welcome-han">초대합니다</span>
+      </div>
 
-      곁에 있을 때 가장 나다운 모습이 되게 하는 한 사람
-      꿈을 펼칠 수 있도록 서로에게 날개가 되어줄 한 사람
-      그 사람과 삶의 여행을 함께 떠나려 합니다.
-      저희 여행의 출발점에 여러분을 초대하오니
-      오셔서 많이 축복해주시면 큰 기쁨이겠습니다.
+      <p className="invite-message">
+        곁에 있을 때 가장 나다운 모습이 되게 하는 한 사람<br/>
+        꿈을 펼칠 수 있도록 서로에게 날개가 되어줄 한 사람<br/>
+        그 사람과 삶의 여행을 함께 떠나려 합니다.<br/>
+        저희 여행의 출발점에 여러분을 초대하오니<br/>
+        오셔서 많이 축복해주시면 큰 기쁨이겠습니다.
+      </p>
 
-
-      오인화 윤숙자 의 장남 진우
-      양성추 임미연 의 장녀 혜숙
+      <div className="invite-party">
+        <div>
+          <b>오인화</b>・<b>윤숙자</b> 의 장남 <b>진우</b>
+        </div>
+        <div>
+          <b>양성추</b>・<b>임미연</b> 의 장녀 <b>혜숙</b>
+        </div>
+      </div>
 
 
     </div>
