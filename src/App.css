@@ -2,23 +2,35 @@
 
 .app {
   display: flex;
-  font-family: Serif;
+  font-family: 'Nanum Myeongjo', serif;
   flex-direction: column;
   max-width: 800px;
   margin: 0 auto;
 }
 .hero {
-  padding: 10em 0 3em;
+  padding: 14em 0 6em;
   background-image: url("/greeting.jpg");
   background-size: 100% auto;
   background-repeat: no-repeat;
 }
 .hero-text {
+  font-family: 'Lobster', cursive;
   font-size: 6rem;
   text-align: center;
   line-height: 0.8em;
   color: #ffffff;
   text-shadow: rgba(0, 0, 0, .4) 0 0 4px;
+}
+.hero-text em {
+  font-style: normal;
+  font-size: 1.2em;
+}
+.hero-text .amp {
+  display: block;
+  font-size: .6em;
+  line-height: 1em;
+  margin-bottom: -.4em;
+  opacity: .8;
 }
 
 .summary {
@@ -67,6 +79,43 @@
 }
 .invite-party {
   line-height: 1.6;
+}
+
+.location {
+  padding-top: 8em;
+}
+.location-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.location-content {
+  padding: 3rem;
+  line-height: 1.6;
+}
+.location dl {
+  font-size: .9em;
+}
+.location dt {
+  font-weight: bold;
+  margin-bottom: .2rem;
+}
+.location dd {
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .location-content {
+    line-height: 1.4;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+}
+.location-artes {
+  border-bottom: 2px dashed rgba(172, 183, 191, 0.4);
+}
+.location-address {
+  margin-top: .5em;
 }
 
 @media (prefers-reduced-motion: no-preference) {
