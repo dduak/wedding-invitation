@@ -77,6 +77,10 @@ const Gallery: React.FC<Props> = props => {
 
     const options: PhotoSwipe.Options = {
       index,
+      closeOnScroll: false,
+      preload: [3, 3],
+      // @ts-ignore
+      shareEl: false,
     };
 
     const gallery = new PhotoSwipe(pswpRef.current, PhotoSwipeUI_Default, items, options);
@@ -98,6 +102,7 @@ const Gallery: React.FC<Props> = props => {
                   }}
                 >
                   <img
+                    className="gallery-item-image"
                     src={item.src.replace('2048', '1024')}
                     sizes="293px"
                     alt=""
