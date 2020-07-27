@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import './App.css';
+import Gallery from "./Gallery";
 
 
 const App: React.FC = () => {
@@ -13,6 +14,7 @@ const App: React.FC = () => {
       <LocationInfo/>
       <GiftMoney/>
       <Footer/>
+      <Gallery/>
     </div>
   );
 }
@@ -84,14 +86,6 @@ const InviteMessage: React.FC = props => {
       </div>
 
 
-    </div>
-  )
-}
-
-const Gallery: React.FC = props => {
-  return (
-    <div>
-      gallery
     </div>
   )
 }
