@@ -14,7 +14,6 @@ const App: React.FC = () => {
       <LocationInfo/>
       <GiftMoney/>
       <Footer/>
-      <Gallery/>
     </div>
   );
 }
