@@ -118,6 +118,14 @@
   margin-top: .5em;
 }
 
+.gift-button {
+  vertical-align: middle;
+  margin-left: 2px;
+}
+.gift-button img {
+  border-radius: 2px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   /* animation's here */
 }
