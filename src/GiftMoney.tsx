@@ -1,5 +1,9 @@
-import React from "react";
+import 'tippy.js/dist/tippy.css';
+import React, {useEffect, useRef} from "react";
+import ClipboardJS from "clipboard";
 import {Target, useAppContext} from "./context";
+import Tippy from '@tippyjs/react';
+
 
 enum Person {
   Ark,
@@ -11,38 +15,85 @@ const GiftMoney: React.FC = props => {
   const isTargetingParents = target === Target.PARENTS
 
   return (
-    <section>
-      <h1>마음 전하는 곳</h1>
 
-      신랑
-      <KakaoPayButton type={Person.Ark}/>
-      <br/>
-      {isTargetingParents && (
-        <>
-          <b>부:</b>
-          농협 250-12-029838 오인화
-          <br/>
-          <b>모:</b>
-          제주 230-21-03470 윤숙자
-        </>
-      )}
+      <section>
+        <h1>마음 전하는 곳</h1>
 
-      <br/>
-      <br/>
-      신부
-      <KakaoPayButton type={Person.Ddugi}/>
-      <br/>
-      {isTargetingParents && (
-        <>
-          <b>부:</b>
-          국민 215-240-458241 양성추
-          <br/>
-          <b>모:</b>
-          하나 164-192-60871 임미연
-        </>
-      )}
+        신랑
+        <KakaoPayButton type={Person.Ark}/>
+        <br/>
+        {isTargetingParents && (
+          <>
+            <b>부:</b>
+            <CopyToClipboard text="25012029838">
+              농협 250-12-029838 오인화
+            </CopyToClipboard>
+            <br/>
+            <b>모:</b>
+            <CopyToClipboard text="2302103470">
+              제주 230-21-03470 윤숙자
+            </CopyToClipboard>
+          </>
+        )}
 
-    </section>
+        <br/>
+        <br/>
+        신부
+        <KakaoPayButton type={Person.Ddugi}/>
+        <br/>
+        {isTargetingParents && (
+          <>
+            <b>부:</b>
+            <CopyToClipboard text="215240458241">
+              국민 215-240-458241 양성추
+            </CopyToClipboard>
+            <br/>
+            <b>모:</b>
+            <CopyToClipboard text="16419260871">
+              하나 164-192-60871 임미연
+            </CopyToClipboard>
+          </>
+        )}
+      </section>
+  )
+}
+
+const CopyToClipboard: React.FC<{
+  text: string
+}> = props => {
+  const elRef = useRef<HTMLSpanElement>(null)
+  useEffect(() => {
+    if (!elRef.current) {
+      return;
+    }
+
+    const clipboard = new ClipboardJS(elRef.current, {
+      text: elem => props.text
+    })
+
+    clipboard.on('success', e => {
+    })
+
+    return () => {
+      clipboard.destroy()
+    }
+  }, [elRef, props.text])
+
+  return (
+    <Tippy
+      content="계좌번호가 복사되었습니다!"
+      trigger="click"
+      onShown={instance => {
+        setTimeout(() => {
+          instance.hide()
+        }, 700)
+      }}
+      duration={[300, 300]}
+    >
+      <span ref={elRef} className="clipboard">
+        {props.children}
+      </span>
+    </Tippy>
   )
 }
 

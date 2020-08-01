@@ -135,6 +135,12 @@
   height: 3rem;
 }
 
+.clipboard {
+  color: darkblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   /* animation's here */
 }
