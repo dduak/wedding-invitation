@@ -126,6 +126,36 @@
   border-radius: 2px;
 }
 
+.toggle-location-button {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.clipboard {
+  color: darkblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.location-button {
+  position: absolute;
+  top: 75px;
+  right: 10px;
+  padding: 2px;
+  background-color: #ffffff;
+  border: 1px solid #000;
+}
+.location-button svg {
+  display: block;
+  fill: #646464;
+}
+.location-point svg {
+  fill: hotpink;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   /* animation's here */
 }

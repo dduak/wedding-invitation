@@ -1,5 +1,5 @@
 import React from "react";
-import {AppProvider, useAppContext} from "./context";
+import {AppProvider, Location, useAppContext} from "./context";
 import Gallery from "./Gallery";
 import Greeting from "./Greeting";
 import LocationInfo from "./LocationInfo";
@@ -18,16 +18,32 @@ const App: React.FC = () => {
         <LocationInfo/>
         <GiftMoney/>
         <Footer/>
+        <ToggleLocationButton/>
       </Layout>
     </AppProvider>
   );
 }
 
-const Layout: React.FC = props => {
-  const { pageType } = useAppContext()
+const ToggleLocationButton: React.FC = props => {
+  const { location, toggleLocation } = useAppContext()
+  const nextTarget = location === Location.JEJU ? 'Seoul' : 'Jeju'
 
   return (
-    <div className={`app ${pageType}`}>
+    <button
+      className="toggle-location-button"
+      onClick={() => {
+        toggleLocation()
+      }}
+    >
+      {nextTarget} &rarr;
+    </button>
+  )
+}
+const Layout: React.FC = props => {
+  const { target } = useAppContext()
+
+  return (
+    <div className={`app ${target}`}>
       {props.children}
     </div>
   )

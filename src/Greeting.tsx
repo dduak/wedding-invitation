@@ -1,11 +1,13 @@
 import React from "react";
-import {PageType, useAppContext} from "./context";
+import {Location, Target, useAppContext} from "./context";
 
 const Greeting: React.FC = props => {
+  const { location } = useAppContext()
+  const date = location === Location.SEOUL ? '2020. 09. 27' : '2020. 10. 03'
   return (
     <div className="invite">
       <div className="invite-welcome">
-        2020. 09. 27<br/>
+        {date}<br/>
         <span className="invite-welcome-han">초대합니다</span>
       </div>
 
@@ -25,9 +27,9 @@ const Greeting: React.FC = props => {
 
 
 const InviteMessage: React.FC = props => {
-  const { pageType } = useAppContext()
+  const { target } = useAppContext()
 
-  if (pageType === PageType.PARENTS) {
+  if (target === Target.PARENTS) {
     return (
       <p className="invite-message">
         저희 아들과 딸이<br/>
