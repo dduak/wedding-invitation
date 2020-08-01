@@ -1,13 +1,73 @@
 import React, {useEffect} from "react";
+import {Location, useAppContext} from "./context";
+
 
 const LocationInfo: React.FC = props => {
+  const { location } = useAppContext()
+
+  if (location === Location.SEOUL) {
+    return <SeoulLocationInfo/>
+  }
+
+  return <JejuLocationInfo/>
+}
+
+const JejuLocationInfo: React.FC = props => {
+  useEffect(() => {
+    // @ts-ignore
+    const maps = window.naver.maps
+    const weddingHallLatLng = new maps.LatLng(33.2539426, 126.5494984)
+    const map = new maps.Map(document.getElementById('map'), {
+      center: weddingHallLatLng,
+      zoom: 15,
+      scaleControl: true,
+      logoControl: false,
+      logoControlOptions: {
+        position: maps.Position.LEFT_BOTTOM,
+      },
+      mapDataControl: false,
+      zoomControl: true,
+      zoomControlOptions: {
+        style: maps.ZoomControlStyle.SMALL,
+        position: maps.Position.RIGHT_TOP,
+      },
+    });
+    // const marker = new maps.Marker({
+    //   position: weddingHallLatLng,
+    //   map: map
+    // });
+    const info = new maps.InfoWindow({
+      content: '<span style="font-size: 2em; pointer-events: none">❣️</span>',
+      borderWidth: 0,
+      backgroundColor: 'transparent',
+      disableAnchor: true,
+      // pixelOffset: new maps.Point(0, 20),
+    })
+    info.open(map, weddingHallLatLng)
+  }, [])
+  return (
+    <section className="location">
+      <div className="location-title">오시는 길</div>
+      <div
+        id="map"
+        style={{width: '100%', height: '50vh'}}
+      />
+      <div className="location-content">
+        <strong className="location-artes">애플웨딩홀</strong>
+        <div className="location-address">제주 서귀포시 일주동로 8796</div>
+      </div>
+    </section>
+  )
+}
+
+const SeoulLocationInfo: React.FC = props => {
   useEffect(() => {
     // @ts-ignore
     const maps = window.naver.maps
     const weddingHallLatLng = new maps.LatLng(37.4820097, 126.9814984)
     const map = new maps.Map(document.getElementById('map'), {
-      center: new maps.LatLng(37.4805097, 126.9814984), // 사당역 보이게 슬쩍 위치조정6함
-      zoom: 15,
+      center: weddingHallLatLng,
+      zoom: 12,
       scaleControl: true,
       logoControl: false,
       logoControlOptions: {

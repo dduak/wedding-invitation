@@ -1,4 +1,5 @@
 import React from "react";
+import {Target, useAppContext} from "./context";
 
 enum Person {
   Ark,
@@ -6,19 +7,40 @@ enum Person {
 }
 
 const GiftMoney: React.FC = props => {
+  const {target} = useAppContext()
+  const isTargetingParents = target === Target.PARENTS
+
   return (
     <section>
       <h1>마음 전하는 곳</h1>
-      신랑<br/>
+
+      신랑
       <KakaoPayButton type={Person.Ark}/>
-      {/*신랑측 부*/}
-      {/*신랑측 모*/}
+      <br/>
+      {isTargetingParents && (
+        <>
+          <b>부:</b>
+          농협 250-12-029838 오인화
+          <br/>
+          <b>모:</b>
+          제주 230-21-03470 윤숙자
+        </>
+      )}
 
       <br/>
-      신부<br/>
+      <br/>
+      신부
       <KakaoPayButton type={Person.Ddugi}/>
-      {/*신부측 부*/}
-      {/*신부측 모*/}
+      <br/>
+      {isTargetingParents && (
+        <>
+          <b>부:</b>
+          국민 215-240-458241 양성추
+          <br/>
+          <b>모:</b>
+          하나 164-192-60871 임미연
+        </>
+      )}
 
     </section>
   )
