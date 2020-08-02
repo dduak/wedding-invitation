@@ -1,0 +1,69 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 90vh;
+}
+.hero-image {
+  position: relative;
+  padding-top: 90vh;
+  overflow: hidden;
+  will-change: transform;
+}
+.hero-image img {
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+  object-position: 50% 0;
+  height: 100%;
+}
+.hero-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20vh;
+  z-index: 1;
+  font-family: 'Lobster', cursive;
+  font-size: min(15vh, 24vw);
+  text-align: center;
+  line-height: 0.8em;
+  color: #ffffff;
+  text-shadow: rgba(0, 0, 0, .4) 0 0 10px;
+}
+.hero-text em {
+  font-style: normal;
+  font-size: 1.2em;
+}
+.hero-text-amp {
+  display: block;
+  font-size: .6em;
+  line-height: 1em;
+  margin-bottom: -.4em;
+  opacity: .7;
+}
+
+.summary {
+  background-color: rgba(255, 255, 255, .7);
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  margin-left: -50vw;
+  padding: 1vh;
+  width: 100vw;
+  text-align: center;
+  font-size: min(2vh, 3.8vw);
+}
+.summary-text {
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: -3px;
+}
+.summary-text .amp {
+  display: inline-block;
+  padding-left: .4em;
+  padding-right: .4em;
+  font-size: .8em;
+}
+.summary-meta {
+  margin-top: .5vh;
+  line-height: 1.6;
+}

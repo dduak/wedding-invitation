@@ -1,0 +1,55 @@
+.invite-party {
+  line-height: 1.6;
+}
+
+.location {
+  padding-top: 8em;
+}
+.location-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.location-content {
+  padding: 3rem;
+  line-height: 1.6;
+}
+.location dl {
+  font-size: .9em;
+}
+.location dt {
+  font-weight: bold;
+  margin-bottom: .2rem;
+}
+.location dd {
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .location-content {
+    line-height: 1.4;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+}
+.location-place {
+  border-bottom: 2px dashed rgba(172, 183, 191, 0.4);
+}
+.location-address {
+  margin-top: .5em;
+}
+.location-button {
+  position: absolute;
+  top: 75px;
+  right: 10px;
+  padding: 2px;
+  background-color: #ffffff;
+  border: 1px solid #000;
+}
+.location-button svg {
+  display: block;
+  fill: #646464;
+}
+.location-point svg {
+  fill: #ff0000;
+}
