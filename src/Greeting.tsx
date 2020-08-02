@@ -1,3 +1,4 @@
+import "./Greeting.css"
 import React from "react";
 import {Location, Target, useAppContext} from "./context";
 
@@ -5,15 +6,15 @@ const Greeting: React.FC = props => {
   const { location } = useAppContext()
   const date = location === Location.SEOUL ? '2020. 09. 27' : '2020. 10. 03'
   return (
-    <div className="invite">
-      <div className="invite-welcome">
+    <div className="greeting">
+      <div className="greeting-welcome">
         {date}<br/>
-        <span className="invite-welcome-han">초대합니다</span>
+        <span className="greeting-welcome-han">초대합니다</span>
       </div>
 
-      <InviteMessage/>
+      <GreetingMessage/>
 
-      <div className="invite-party">
+      <div className="greeting-party">
         <div>
           <b>오인화</b>・<b>윤숙자</b> 의 장남 <b>진우</b>
         </div>
@@ -26,12 +27,12 @@ const Greeting: React.FC = props => {
 }
 
 
-const InviteMessage: React.FC = props => {
+const GreetingMessage: React.FC = props => {
   const { target } = useAppContext()
 
   if (target === Target.PARENTS) {
     return (
-      <p className="invite-message">
+      <p className="greeting-message">
         저희 아들과 딸이<br/>
         사랑과 믿음으로 한 가정을 이루고자<br/>
         혼인의 예를 올립니다.<br/>
@@ -45,7 +46,7 @@ const InviteMessage: React.FC = props => {
   }
 
   return (
-    <p className="invite-message">
+    <p className="greeting-message">
       곁에 있을 때 가장 나다운 모습이 되게 하는 한 사람<br/>
       꿈을 펼칠 수 있도록 서로에게 날개가 되어줄 한 사람<br/>
       그 사람과 삶의 여행을 함께 떠나려 합니다.<br/>

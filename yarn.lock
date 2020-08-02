@@ -1620,6 +1620,11 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/rellax@^1.7.3":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@types/rellax/-/rellax-1.7.3.tgz#2e21174ef0a2c9717125a415daee46c353c000b8"
+  integrity sha512-W5I8DS7ZGkA/jPiirTk0kbU9ZttnpjFM2Qaj3sW2aYj4itueOzcU6D+Il6OV+JyzdeHf9P11tcwGu1mlASgJRA==
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
@@ -8926,6 +8931,11 @@ relateurl@^0.2.7:
   version "0.2.7"
   resolved "https://registry.yarnpkg.com/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
+
+rellax@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/rellax/-/rellax-1.12.1.tgz#1b433ef7ac4aa3573449a33efab391c112f6b34d"
+  integrity sha512-XBIi0CDpW5FLTujYjYBn1CIbK2CJL6TsAg/w409KghP2LucjjzBjsujXDAjyBLWgsfupfUcL5WzdnIPcGfK7XA==
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"

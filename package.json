@@ -16,6 +16,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "rellax": "^1.12.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -41,6 +42,7 @@
   },
   "devDependencies": {
     "@types/clipboard": "^2.0.1",
-    "@types/photoswipe": "^4.1.0"
+    "@types/photoswipe": "^4.1.0",
+    "@types/rellax": "^1.7.3"
   }
 }

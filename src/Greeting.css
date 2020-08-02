@@ -1,0 +1,16 @@
+.greeting {
+  padding: 8em 0 4em;
+  text-align: center;
+}
+.greeting-welcome {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.greeting-welcome-han {
+  letter-spacing: -.07em;
+}
+.greeting-message {
+  margin-top: 3em;
+  margin-bottom: 2em;
+  line-height: 1.6;
+}
