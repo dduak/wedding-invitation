@@ -1,18 +1,11 @@
 import "./Hero.css"
-import React, {useEffect} from "react";
-import Rellax from "rellax";
+import React from "react";
 import {Location, useAppContext} from "./context";
 
 const Hero: React.FC = props => {
-  useEffect(() => {
-    new Rellax('.hero-image');
-  }, [])
   return (
     <div className="hero">
-      <div
-        className="hero-image"
-        data-rellax-speed="-12"
-      >
+      <div className="hero-image">
         <img
           src="/photos/1_2048.jpg"
           width="100%"
