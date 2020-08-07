@@ -5,10 +5,13 @@
   font-family: 'Nanum Myeongjo', serif;
   font-family: 'Noto Serif KR', serif;
   flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 .container {
   max-width: 935px;
   margin: 0 auto;
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left);
 }
 .poet {
   position: relative;

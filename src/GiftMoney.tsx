@@ -15,7 +15,7 @@ const GiftMoney: React.FC = props => {
   const isTargetingParents = target === Target.PARENTS
 
   return (
-
+    <div className="container">
       <section>
         <h1>마음 전하는 곳</h1>
 
@@ -55,6 +55,7 @@ const GiftMoney: React.FC = props => {
           </>
         )}
       </section>
+    </div>
   )
 }
 
