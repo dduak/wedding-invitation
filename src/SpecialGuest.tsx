@@ -30,7 +30,7 @@ const SpecialGuest: React.FC<Props> = props => {
             role="축가"
           >
             신랑의 기타동호회 기타 스승님과 그의 연인입니다.<br/>
-            곧 입대를 앞두고 있어 정신이 없을텐데도 쿨하게, 심지어 듀엣으로 축가를 준비해주었습니다.
+            곧 입대를 앞두고 있어 정신이 없을텐데도 쿨하게, 심지어 듀엣으로 축가를 준비해주었습니다 🥺
           </Guest>
           <Guest
             photo="/guests/halle9484.png"
@@ -42,7 +42,7 @@ const SpecialGuest: React.FC<Props> = props => {
             진짜로 해 주시기로 하셨습니다 🙏
           </Guest>
         </div>
-        <p>...그리고 당신!</p>
+        <p>...그리고 바로 당신! 😘</p>
       </div>
     </section>
   )
