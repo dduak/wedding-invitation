@@ -42,7 +42,7 @@ const SpecialGuest: React.FC<Props> = props => {
             진짜로 해 주시기로 하셨습니다 🙏
           </Guest>
         </div>
-        <p>...그리고 바로 당신! 😘</p>
+        <p>...그리고 바로 당신! <span role="img" aria-label="chu">😘</span></p>
       </div>
     </section>
   )
