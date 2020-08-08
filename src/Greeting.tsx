@@ -3,32 +3,35 @@ import React from "react";
 import {Location, Target, useAppContext} from "./context";
 
 const Greeting: React.FC = props => {
-  const { location } = useAppContext()
+  const {location} = useAppContext()
   const date = location === Location.SEOUL ? '2020. 09. 27' : '2020. 10. 03'
+
   return (
-    <div className="greeting">
-      <div className="greeting-welcome">
-        {date}<br/>
-        <span className="greeting-welcome-han">초대합니다</span>
-      </div>
+    <div className="container">
+      <section className="section greeting">
+        <header className="section-title">
+          <span className="number">{date}</span><br/>
+          초대합니다
+        </header>
 
-      <GreetingMessage/>
+        <GreetingMessage/>
 
-      <div className="greeting-party">
-        <div>
-          <b>오인화</b>・<b>윤숙자</b> 의 장남 <b>진우</b>
+        <div className="greeting-party">
+          <div>
+            <b>오인화</b>・<b>윤숙자</b> 의 장남 <b>진우</b>
+          </div>
+          <div>
+            <b>양성추</b>・<b>임미연</b> 의 장녀 <b>혜숙</b>
+          </div>
         </div>
-        <div>
-          <b>양성추</b>・<b>임미연</b> 의 장녀 <b>혜숙</b>
-        </div>
-      </div>
+      </section>
     </div>
   )
 }
 
 
 const GreetingMessage: React.FC = props => {
-  const { target } = useAppContext()
+  const {target} = useAppContext()
 
   if (target === Target.PARENTS) {
     return (

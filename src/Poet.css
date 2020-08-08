@@ -1,0 +1,26 @@
+
+.poet {
+  position: relative;
+  height: min(80vh, 80vw);
+  font-size: min(3vh, 4vw);
+  text-align: center;
+  line-height: 1.8;
+  background: #eceadc;
+}
+.poet-content {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.poet-ref {
+  font-size: .8em;
+}
+.poet-feather {
+  position: absolute;
+  top: min(8vh, 10vw);
+  fill: rgba(255, 255, 255, .7);
+  width: min(8vh, 8vw);
+  margin-left: max(-4vh, -4vw);
+}

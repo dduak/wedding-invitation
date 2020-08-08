@@ -1,4 +1,5 @@
 import 'tippy.js/dist/tippy.css';
+import './GiftMoney.css';
 import React, {useEffect, useRef} from "react";
 import ClipboardJS from "clipboard";
 import {Target, useAppContext} from "./context";
@@ -17,8 +18,8 @@ const GiftMoney: React.FC = props => {
 
   return (
     <div className="container">
-      <section>
-        <h1>마음 전하는 곳</h1>
+      <section className="section">
+        <h1 className="section-title">마음 전하는 곳</h1>
 
         신랑
         <KakaoPayButton type={Person.Aki}/>
