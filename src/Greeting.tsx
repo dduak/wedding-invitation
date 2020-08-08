@@ -7,8 +7,8 @@ const Greeting: React.FC = props => {
   const date = location === Location.SEOUL ? '2020. 09. 27' : '2020. 10. 03'
 
   return (
-    <div className="container">
-      <section className="section greeting">
+    <section className="section greeting">
+      <div className="container">
         <header className="section-title">
           <span className="number">{date}</span><br/>
           초대합니다
@@ -24,8 +24,8 @@ const Greeting: React.FC = props => {
             <b>양성추</b>・<b>임미연</b> 의 장녀 <b>혜숙</b>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 

@@ -1,6 +1,4 @@
 .gallery {
-  display: flex;
-  flex-direction: column;
 }
 
 .gallery-row {

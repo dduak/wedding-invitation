@@ -17,8 +17,8 @@ const GiftMoney: React.FC = props => {
   const isTargetingParents = target === Target.PARENTS
 
   return (
-    <div className="container">
-      <section className="section">
+    <section className="section">
+      <div className="container">
         <h1 className="section-title">마음 전하는 곳</h1>
 
         신랑
@@ -56,8 +56,8 @@ const GiftMoney: React.FC = props => {
             </CopyToClipboard>
           </>
         )}
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 

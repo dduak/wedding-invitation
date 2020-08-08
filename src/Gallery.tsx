@@ -95,8 +95,8 @@ const Gallery: React.FC<Props> = props => {
   }, [items])
 
   return (
-    <div className="container">
-      <section className="gallery">
+    <section className="gallery section">
+      <div className="container">
         {rows.map((row, rowIndex) => (
           <div className="gallery-row" key={rowIndex}>
             {row.map(item => (
@@ -119,9 +119,9 @@ const Gallery: React.FC<Props> = props => {
             ))}
           </div>
         ))}
-      </section>
+      </div>
       <PhotoSwipeContainer ref={pswpRef}/>
-    </div>
+    </section>
   )
 }
 

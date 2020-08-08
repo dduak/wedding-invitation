@@ -3,7 +3,7 @@ import React from "react";
 
 const Poet: React.FC = props => {
   return (
-    <div className="poet">
+    <section className="poet section">
       <Feather/>
       <div className="poet-content">
         <p className="poet-text">
@@ -14,7 +14,7 @@ const Poet: React.FC = props => {
         </p>
         <p className="poet-ref">- 박미라 "아름다운 날에 부치다" 중</p>
       </div>
-    </div>
+    </section>
   )
 }
 
