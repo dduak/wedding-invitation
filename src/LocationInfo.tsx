@@ -40,7 +40,7 @@ const SeoulLocationInfo: React.FC = props => {
         lat: 37.4820097,
         lng: 126.9814984
       },
-      zoom: 12,
+      zoom: 13,
     })
   }, [])
 
@@ -70,9 +70,9 @@ const SeoulLocationInfo: React.FC = props => {
 
 const LocationInfoLayout: React.FC = props => {
   return (
-    <div className="container">
-      <section className="location">
-        <div className="location-title">오시는 길</div>
+    <section className="section location">
+      <div className="container">
+        <div className="section-title">오시는 길</div>
         <div
           id="map"
           style={{width: '100%', height: '50vh'}}
@@ -80,8 +80,8 @@ const LocationInfoLayout: React.FC = props => {
         <div className="location-content">
           {props.children}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   )
 }
 type MapOptions = {

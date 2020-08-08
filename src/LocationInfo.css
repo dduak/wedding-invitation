@@ -3,16 +3,14 @@
 }
 
 .location {
-  padding-top: 8em;
 }
-.location-title {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
+.location .section-title {
   margin-bottom: 3rem;
 }
 .location-content {
-  padding: 3rem;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
   line-height: 1.6;
 }
 .location dl {
@@ -28,6 +26,7 @@
 @media (max-width: 640px) {
   .location-content {
     line-height: 1.4;
+    padding-top: 1.4em;
     padding-left: .5em;
     padding-right: .5em;
   }
