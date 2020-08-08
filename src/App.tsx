@@ -16,6 +16,7 @@ const App: React.FC = () => {
 
   return (
     <AppProvider>
+      <ToggleLocationButton/>
       <Hero/>
       <Layout>
         <Poet/>
@@ -24,7 +25,6 @@ const App: React.FC = () => {
         <LocationInfo/>
         <GiftMoney/>
         <Footer/>
-        <ToggleLocationButton/>
       </Layout>
     </AppProvider>
   );
@@ -32,7 +32,7 @@ const App: React.FC = () => {
 
 const ToggleLocationButton: React.FC = props => {
   const {location, toggleLocation} = useAppContext()
-  const nextTarget = location === Location.JEJU ? 'Seoul' : 'Jeju'
+  const nextTarget = location === Location.JEJU ? '서울본식💒' : '제주잔치🎊'
 
   return (
     <button
@@ -41,7 +41,8 @@ const ToggleLocationButton: React.FC = props => {
         toggleLocation()
       }}
     >
-      {nextTarget} &rarr;
+      {nextTarget}
+      <span className="br-on-mobile"> 정보로 보기</span>
     </button>
   )
 }
