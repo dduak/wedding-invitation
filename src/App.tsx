@@ -1,13 +1,18 @@
 import "./App.css";
-import React from "react";
+import React, {useEffect} from "react";
 import {AppProvider, Location, useAppContext} from "./context";
 import Gallery from "./Gallery";
 import Greeting from "./Greeting";
 import LocationInfo from "./LocationInfo";
 import GiftMoney from "./GiftMoney";
 import Hero from "./Hero";
+import { trackPageView } from "./tracking";
 
 const App: React.FC = () => {
+  useEffect(() => {
+    trackPageView();
+  }, [])
+
   return (
     <AppProvider>
       <Hero/>

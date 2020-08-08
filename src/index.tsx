@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {initializeTracker} from "./tracking";
+
+
+initializeTracker()
 
 ReactDOM.render(
   <React.StrictMode>
