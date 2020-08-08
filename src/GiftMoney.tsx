@@ -17,45 +17,82 @@ const GiftMoney: React.FC = props => {
   const isTargetingParents = target === Target.PARENTS
 
   return (
-    <section className="section">
+    <section className="section gift">
       <div className="container">
         <h1 className="section-title">마음 전하는 곳</h1>
+        <p>
+          사회적 거리두기의 시기에
+          <span className="br-on-mobile"> </span>
+          초대를 드리게 되어 송구합니다.<br/>
+          참석은 어렵지만 축의는 해주실 분들을 위해
+          <span className="br-on-mobile"> </span>
+          준비했습니다.<br/>
+          <small>계좌번호는 누르면 복사됩니다.</small>
+        </p>
 
-        신랑
-        <KakaoPayButton type={Person.Aki}/>
-        <br/>
-        {isTargetingParents && (
-          <>
-            <b>부:</b>
-            <CopyToClipboard text="25012029838">
-              농협 250-12-029838 오인화
-            </CopyToClipboard>
+        <div className="gift-container">
+          <div className="gift-box">
+            <div className="gift-box-title">
+              🤵🏻 신랑측 축의하기
+            </div>
+            <KakaoPayButton type={Person.Aki}/>
             <br/>
-            <b>모:</b>
-            <CopyToClipboard text="2302103470">
-              제주 230-21-03470 윤숙자
-            </CopyToClipboard>
-          </>
-        )}
-
-        <br/>
-        <br/>
-        신부
-        <KakaoPayButton type={Person.Ddugi}/>
-        <br/>
-        {isTargetingParents && (
-          <>
-            <b>부:</b>
-            <CopyToClipboard text="215240458241">
-              국민 215-240-458241 양성추
-            </CopyToClipboard>
+            <small>
+              <CopyToClipboard text="3333016525108">
+                카카오뱅크 3333-01-6525108 오진우
+              </CopyToClipboard>
+            </small>
             <br/>
-            <b>모:</b>
-            <CopyToClipboard text="16419260871">
-              하나 164-192-60871 임미연
-            </CopyToClipboard>
-          </>
-        )}
+            {isTargetingParents && (
+              <div className="gift-box-parents">
+                <b>부: </b>
+                <CopyToClipboard text="25012029838">
+                  농협 250-12-029838 오인화
+                </CopyToClipboard>
+                <br/>
+                <b>모: </b>
+                <CopyToClipboard text="2302103470">
+                  제주 230-21-03470 윤숙자
+                </CopyToClipboard>
+              </div>
+            )}
+          </div>
+          <div className="gift-box">
+            <div className="gift-box-title">
+              👰🏻 신부측 축의하기
+            </div>
+            <KakaoPayButton type={Person.Ddugi}/>
+            <br/>
+            <small>
+              <CopyToClipboard text="110318061030">
+                신한 110-318-061030 양혜숙
+              </CopyToClipboard>
+            </small>
+            <br/>
+            {isTargetingParents && (
+              <div className="gift-box-parents">
+                <b>부: </b>
+                <CopyToClipboard text="215240458241">
+                  국민 215-240-458241 양성추
+                </CopyToClipboard>
+                <br/>
+                <b>모: </b>
+                <CopyToClipboard text="16419260871">
+                  하나 164-192-60871 임미연
+                </CopyToClipboard>
+              </div>
+            )}
+          </div>
+        </div>
+        <p className="gift-thx">
+          감사합니다.
+          {!isTargetingParents && (
+            <>
+              <br/>
+              잘살겠습니다! 👩‍❤️‍💋‍👨
+            </>
+          )}
+        </p>
       </div>
     </section>
   )

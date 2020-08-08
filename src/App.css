@@ -76,13 +76,6 @@ body {
   }
 }
 
-
-.clipboard {
-  color: darkblue;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
 .footer {
   border-top-width: 1px;
   border-top-style: dotted;
