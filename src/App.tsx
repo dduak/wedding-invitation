@@ -8,6 +8,7 @@ import LocationInfo from "./LocationInfo";
 import GiftMoney from "./GiftMoney";
 import Hero from "./Hero";
 import Poet from "./Poet";
+import SpecialGuest from "./SpecialGuest";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Poet/>
         <Greeting/>
         <Gallery/>
+        <SpecialGuest/>
         <LocationInfo/>
         <GiftMoney/>
         <Footer/>
