@@ -33,7 +33,8 @@ const GiftMoney: React.FC = props => {
         <div className="gift-container">
           <div className="gift-box">
             <div className="gift-box-title">
-              🤵🏻 신랑측 축의하기
+              <span role="img" aria-label="groom">🤵🏻</span>
+              신랑측 축의하기
             </div>
             <KakaoPayButton type={Person.Aki}/>
             <br/>
@@ -59,7 +60,8 @@ const GiftMoney: React.FC = props => {
           </div>
           <div className="gift-box">
             <div className="gift-box-title">
-              👰🏻 신부측 축의하기
+              <span role="img" aria-label="bride">👰🏻</span>
+              신부측 축의하기
             </div>
             <KakaoPayButton type={Person.Ddugi}/>
             <br/>
