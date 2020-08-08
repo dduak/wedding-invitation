@@ -10,13 +10,13 @@ import Hero from "./Hero";
 const App: React.FC = () => {
   return (
     <AppProvider>
+      <Hero/>
       <Layout>
-        <Hero/>
         <Poet/>
         <Greeting/>
+        <Gallery/>
         <LocationInfo/>
         <GiftMoney/>
-        <Gallery/>
         <Footer/>
         <ToggleLocationButton/>
       </Layout>
