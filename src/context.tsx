@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
+import {trackChangeLocation} from "./tracking";
 
 
 export enum Target {
@@ -26,9 +27,11 @@ export const AppProvider: React.FC = props => {
     if (searchParam.location === Location.JEJU) {
       delete nextSearchParam.location
       setLocation(Location.SEOUL)
+      trackChangeLocation(Location.SEOUL)
     } else {
       nextSearchParam.location = Location.JEJU
       setLocation(Location.JEJU)
+      trackChangeLocation(Location.JEJU)
     }
 
     const url = buildUrl(nextSearchParam)

@@ -4,17 +4,19 @@
   height: 90vh;
 }
 .hero-image {
-  position: relative;
-  padding-top: 90vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   overflow: hidden;
-  will-change: transform;
 }
 .hero-image img {
   position: absolute;
   top: 0;
   object-fit: cover;
   object-position: 50% 0;
-  height: 100%;
+  height: min(120vh, 196vw);
 }
 .hero-text {
   position: absolute;

@@ -1,14 +1,21 @@
 @import-normalize;
 
-.app {
-  display: flex;
-  font-family: 'Nanum Myeongjo', serif;
+body {
   font-family: 'Noto Serif KR', serif;
+}
+
+.app {
+  position: relative;
+  display: flex;
   flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: #ffffff;
 }
 .container {
   max-width: 935px;
   margin: 0 auto;
+  padding-right: env(safe-area-inset-right);
+  padding-left: env(safe-area-inset-left);
 }
 .poet {
   position: relative;

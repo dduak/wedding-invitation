@@ -3,11 +3,12 @@ import React, {useEffect, useRef} from "react";
 import ClipboardJS from "clipboard";
 import {Target, useAppContext} from "./context";
 import Tippy from '@tippyjs/react';
+import {trackPressAccountNumber, trackPressGiftMoneyButton} from "./tracking";
 
 
 enum Person {
-  Ark,
-  Ddugi,
+  Aki= 'Aki',
+  Ddugi = 'Ddugi',
 }
 
 const GiftMoney: React.FC = props => {
@@ -15,12 +16,12 @@ const GiftMoney: React.FC = props => {
   const isTargetingParents = target === Target.PARENTS
 
   return (
-
+    <div className="container">
       <section>
         <h1>마음 전하는 곳</h1>
 
         신랑
-        <KakaoPayButton type={Person.Ark}/>
+        <KakaoPayButton type={Person.Aki}/>
         <br/>
         {isTargetingParents && (
           <>
@@ -55,6 +56,7 @@ const GiftMoney: React.FC = props => {
           </>
         )}
       </section>
+    </div>
   )
 }
 
@@ -72,6 +74,7 @@ const CopyToClipboard: React.FC<{
     })
 
     clipboard.on('success', e => {
+      trackPressAccountNumber(props.text)
     })
 
     return () => {
@@ -99,12 +102,21 @@ const CopyToClipboard: React.FC<{
 
 const KakaoPayButton: React.FC<{ type: Person }> = props => {
   const mapping = {
-    [Person.Ark]: '281006011000000743345432',
+    [Person.Aki]: '281006011000000743345432',
     [Person.Ddugi]: '281006011000081348447563',
   }
+  const href = `https://qr.kakaopay.com/${mapping[props.type]}`
 
   return (
-    <a className="gift-button" href={`https://qr.kakaopay.com/${mapping[props.type]}`}>
+    <a
+      className="gift-button"
+      href={href}
+      onClick={event => {
+        event.preventDefault()
+        trackPressGiftMoneyButton(props.type)
+        window.location.href = href
+      }}
+    >
       <img
         src="/kakaopay_200_100.png"
         alt="카카오페이로 축의금 보내기"

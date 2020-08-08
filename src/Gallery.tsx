@@ -1,10 +1,10 @@
+import 'photoswipe/dist/photoswipe.css';
+import 'photoswipe/dist/default-skin/default-skin.css';
+import './Gallery.css';
 import React, {forwardRef, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import PhotoSwipe from 'photoswipe';
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
-import './Gallery.css';
-import 'photoswipe/dist/photoswipe.css';
-import 'photoswipe/dist/default-skin/default-skin.css';
-
+import {trackPhotoView, trackPressThumbnail} from "./tracking";
 
 
 const images = [
@@ -86,6 +86,12 @@ const Gallery: React.FC<Props> = props => {
     const gallery = new PhotoSwipe(pswpRef.current, PhotoSwipeUI_Default, items, options);
 
     gallery.init();
+    trackPressThumbnail(items[index].src)
+    trackPhotoView(items[index].src)
+
+    gallery.listen('afterChange', () => {
+      trackPhotoView(items[gallery.getCurrentIndex()].src)
+    });
   }, [items])
 
   return (
