@@ -7,7 +7,7 @@ const Hero: React.FC = props => {
     <div className="hero">
       <div className="hero-image">
         <img
-          src="/photos/1_2048.jpg"
+          src="/photos/main_2048.jpg"
           width="100%"
           alt=""
         />
