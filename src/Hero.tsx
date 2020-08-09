@@ -7,7 +7,7 @@ const Hero: React.FC = props => {
     <div className="hero">
       <div className="hero-image">
         <img
-          src="/photos/main_2048.jpg"
+          src={`${process.env.REACT_APP_PHOTO_PATH}/main_2048.jpg`}
           width="100%"
           alt=""
         />
