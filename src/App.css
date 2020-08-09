@@ -48,6 +48,12 @@ body {
     display: block;
   }
 }
+@media (max-width: 374px) {
+  .br-on-small-mobile {
+    display: block;
+  }
+}
+
 
 .toggle-location-button {
   /*position: absolute;*/
