@@ -23,7 +23,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 20vh;
+  bottom: 18vh;
   z-index: 1;
   font-family: 'Lobster', cursive;
   font-size: min(15vh, 24vw);
