@@ -67,7 +67,7 @@ const Gallery: React.FC<Props> = props => {
     for (let i = 0; i < 24; i++) {
       nextItems.push({
         index: i,
-        src: `/photos/${i+1}_2048.jpg`,
+        src: `${process.env.REACT_APP_PHOTO_PATH}/${i+1}_2048.jpg`,
         w: images[i].w,
         h: images[i].h,
       });
