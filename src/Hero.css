@@ -1,7 +1,8 @@
 .hero {
   position: relative;
   overflow: hidden;
-  height: 90vh;
+  height: max(80vh, 50vw);
+  background-color: #eceadc;
 }
 .hero-image {
   position: fixed;
@@ -16,7 +17,7 @@
   top: 0;
   object-fit: cover;
   object-position: 50% 0;
-  height: min(120vh, 196vw);
+  height: min(120vh, 174vw);
 }
 .hero-text {
   position: absolute;
