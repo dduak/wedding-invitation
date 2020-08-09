@@ -50,11 +50,17 @@ const GreetingMessage: React.FC = props => {
 
   return (
     <p className="greeting-message">
-      곁에 있을 때 가장 나다운 모습이 되게 하는 한 사람<br/>
-      꿈을 펼칠 수 있도록 서로에게 날개가 되어줄 한 사람<br/>
+      곁에 있을 때
+      <span className="br-on-small-mobile"> </span>
+      가장 나다운 모습이 되게 하는 한 사람<br/>
+      꿈을 펼칠 수 있도록 서로에게
+      <span className="br-on-small-mobile"> </span>
+      날개가 되어줄 한 사람<br/>
       그 사람과 삶의 여행을 함께 떠나려 합니다.<br/>
       저희 여행의 출발점에 여러분을 초대하오니<br/>
-      오셔서 많이 축복해주시면 큰 기쁨이겠습니다.
+      오셔서 많이 축복해주시면
+      <span className="br-on-small-mobile"> </span>
+      큰 기쁨이겠습니다.
     </p>
   )
 }
