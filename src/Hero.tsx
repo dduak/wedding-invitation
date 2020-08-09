@@ -3,11 +3,14 @@ import React from "react";
 import {Location, useAppContext} from "./context";
 
 const Hero: React.FC = props => {
+  const {location} = useAppContext()
+  const img = location === Location.SEOUL ? 'main_2048.jpg' : 'main2_2048.jpg'
+
   return (
-    <div className="hero">
+    <div className={`hero ${location}`}>
       <div className="hero-image">
         <img
-          src={`${process.env.REACT_APP_PHOTO_PATH}/main_2048.jpg`}
+          src={`${process.env.REACT_APP_PHOTO_PATH}/${img}`}
           width="100%"
           alt=""
         />
@@ -30,7 +33,7 @@ const Summary: React.FC = props => {
   const { location } = useAppContext()
   const isJeju = location === Location.JEJU
   const datetime = isJeju ? '2020년 10월 03일 (토)' : '2020년 09월 27일 (일) 오후 2시'
-  const place = isJeju ? ' 애플컨벤션' : '아르테스웨딩'
+  const place = isJeju ? ' 애플컨벤션 in 제주' : '아르테스웨딩 in 서울'
 
   return (
     <div className="summary">

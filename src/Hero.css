@@ -32,6 +32,10 @@
   color: #ffffff;
   text-shadow: rgba(0, 0, 0, .4) 0 0 10px;
 }
+.jeju .hero-text {
+  top: 4vh;
+  bottom: auto;
+}
 .hero-text em {
   font-style: normal;
   font-size: 1.2em;
