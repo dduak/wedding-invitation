@@ -1,6 +1,6 @@
 import "./App.css";
 import React, {useEffect} from "react";
-import {AppProvider, Location, useAppContext} from "./context";
+import {AppProvider, useAppContext} from "./context";
 import {trackPageView} from "./tracking";
 import Gallery from "./Gallery";
 import Greeting from "./Greeting";
@@ -9,6 +9,7 @@ import GiftMoney from "./GiftMoney";
 import Hero from "./Hero";
 import Poet from "./Poet";
 import SpecialGuest from "./SpecialGuest";
+import ToggleLocationButton from "./ToggleLocationButton";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -32,22 +33,6 @@ const App: React.FC = () => {
   );
 }
 
-const ToggleLocationButton: React.FC = props => {
-  const {location, toggleLocation} = useAppContext()
-  const nextTarget = location === Location.JEJU ? '서울본식 💒' : '제주잔치 🎊'
-
-  return (
-    <button
-      className="toggle-location-button"
-      onClick={() => {
-        toggleLocation()
-      }}
-    >
-      {nextTarget}
-      <span className="br-on-mobile"> 정보로 보기 &rarr;</span>
-    </button>
-  )
-}
 const Layout: React.FC = props => {
   const {type} = useAppContext()
 

@@ -4,6 +4,9 @@ body {
   font-family: 'Noto Serif KR', serif;
   font-size: 21px;
 }
+.tippy-box {
+  font-family: sans-serif;
+}
 @media (max-width: 640px) {
   body {
     font-size: 16px;
@@ -51,34 +54,6 @@ body {
 @media (max-width: 374px) {
   .br-on-small-mobile {
     display: block;
-  }
-}
-
-
-.toggle-location-button {
-  /*position: absolute;*/
-  position: fixed;
-  /*top: 86vh;*/
-  top: 1em;
-  /*left: calc(50% + 6em);*/
-  right: 1em;
-  z-index: 1000;
-  border-radius: 4px;
-  padding: .6em;
-  line-height: 1;
-  background-color: #222;
-  color: #eceadc;
-  font-size: 14px;
-  border: 0 none;
-  cursor: pointer;
-  opacity: .7;
-}
-@media (max-width: 640px) {
-  .toggle-location-button {
-    line-height: 1.4;
-  }
-  .toggle-location-button .br-on-mobile {
-    font-size: .8em;
   }
 }
 
