@@ -52,3 +52,28 @@
 .location-point svg {
   fill: #ff0000;
 }
+
+.location-mapapp {
+  margin: .4em 0 1em;
+}
+
+.location-mapbutton {
+  padding: 0.6em 1.2em;
+  margin-left: .6em;
+  border-radius: 4px;
+  border: 0 none;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 0 2px rgba(0, 0, 0, .4);
+}
+.location-mapbutton:first-child {
+  margin-left: 0;
+}
+.location-mapbutton.naver {
+  color: #fff;
+  background-color: #0eca68;
+}
+.location-mapbutton.kakao {
+  color: #fff;
+  background-color: #fccf00;
+}

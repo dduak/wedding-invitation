@@ -15,40 +15,51 @@ const LocationInfo: React.FC = props => {
 }
 
 const JejuLocationInfo: React.FC = props => {
+  const point = {
+    lat: 33.2539426,
+    lng: 126.5494984
+  };
+
   useEffect(() => {
     initMap({
-      point: {
-        lat: 33.2539426,
-        lng: 126.5494984
-      },
+      point,
       zoom: 15,
     })
-  }, [])
+  }, [point])
   return (
     <LocationInfoLayout>
       <strong className="location-place">애플컨벤션</strong>
       <div className="location-address">제주 서귀포시 일주동로 8796</div>
+      <MapAppArea
+        name="애플컨벤션"
+        point={point}
+      />
     </LocationInfoLayout>
   )
 }
 
 
 const SeoulLocationInfo: React.FC = props => {
+  const point = {
+    lat: 37.4820097,
+    lng: 126.9814984
+  }
+
   useEffect(() => {
     initMap({
-      point: {
-        lat: 37.4820097,
-        lng: 126.9814984
-      },
+      point,
       zoom: 13,
     })
-  }, [])
+  }, [point])
 
   return (
     <LocationInfoLayout>
       <strong className="location-place">아르테스웨딩</strong>
       <div className="location-address">서울 동작구 동작대로 59 쌍립빌딩 2층 (사당 교보타워 2층)</div>
-
+      <MapAppArea
+        name="아르테스웨딩홀"
+        point={point}
+      />
       <dl>
         <dt>지하철</dt>
         <dd>사당역과 이수역 중간</dd>
@@ -65,6 +76,67 @@ const SeoulLocationInfo: React.FC = props => {
         <dd>공항버스: 6016</dd>
       </dl>
     </LocationInfoLayout>
+  )
+}
+
+enum MapAppType {
+  NAVER = 'naver',
+  KAKAO = 'kakao'
+}
+
+const MapAppArea: React.FC<{
+  name: string
+  point: {
+    lat: number
+    lng: number
+  }
+}> = props => {
+  const { name, point } = props
+
+  return (
+    <div className="location-mapapp">
+      <MapButton
+        name={name}
+        point={point}
+        type={MapAppType.NAVER}
+      />
+      <MapButton
+        name={name}
+        point={point}
+        type={MapAppType.KAKAO}
+      />
+    </div>
+  )
+}
+
+const MapButton: React.FC<{
+  type: MapAppType
+  name: string
+  point: {
+    lat: number
+    lng: number
+  }
+}> = props => {
+  const { name, type, point } = props
+  const { lat, lng } = point
+  const isNaverMap = type === MapAppType.NAVER
+  const appText = isNaverMap ? '네이버맵' : '카카오맵'
+  const handleClick = () => {
+    if (isNaverMap) {
+      window.location.href = `nmap://route/car?dlat=${lat}&dlng=${lng}&dname=${encodeURI(name)}&appname=https://jinwoohyesook.xyz`;
+    } else {
+      window.location.href = `kakaomap://route?ep=${lat}},${lng}&by=CAR`;
+    }
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      className={`location-mapbutton ${type}`}
+    >
+      {appText}으로 길찾기
+    </button>
   )
 }
 
