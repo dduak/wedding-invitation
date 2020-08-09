@@ -2,7 +2,7 @@ import 'tippy.js/dist/tippy.css';
 import './GiftMoney.css';
 import React, {useEffect, useRef} from "react";
 import ClipboardJS from "clipboard";
-import {Target, useAppContext} from "./context";
+import {Type, useAppContext} from "./context";
 import Tippy from '@tippyjs/react';
 import {trackPressAccountNumber, trackPressGiftMoneyButton} from "./tracking";
 
@@ -13,8 +13,8 @@ enum Person {
 }
 
 const GiftMoney: React.FC = props => {
-  const {target} = useAppContext()
-  const isTargetingParents = target === Target.PARENTS
+  const {type} = useAppContext()
+  const isTargetingParents = type === Type.PARENTS
 
   return (
     <section className="section gift">
