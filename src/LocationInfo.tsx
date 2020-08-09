@@ -125,7 +125,7 @@ const MapButton: React.FC<{
     if (isNaverMap) {
       window.location.href = `nmap://route/car?dlat=${lat}&dlng=${lng}&dname=${encodeURI(name)}&appname=https://jinwoohyesook.xyz`;
     } else {
-      window.location.href = `kakaomap://route?sp=&ep=${lat}},${lng}&by=CAR`;
+      window.location.href = `kakaomap://route?ep=${lat},${lng}&by=CAR`;
     }
   }
 
