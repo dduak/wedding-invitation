@@ -2,7 +2,7 @@ import React, {createContext, useContext, useEffect, useState} from "react";
 import {trackChangeLocation} from "./tracking";
 
 
-export enum Target {
+export enum Type {
   DEFAULT = '',
   PARENTS = 'parents',
 }
@@ -12,13 +12,13 @@ export enum Location {
 }
 
 const AppContext = createContext({
-  target: Target.DEFAULT,
+  type: Type.DEFAULT,
   location: Location.SEOUL,
   toggleLocation: () => {},
 })
 
 export const AppProvider: React.FC = props => {
-  const [target, setTarget] = useState(Target.DEFAULT)
+  const [type, setType] = useState(Type.DEFAULT)
   const [location, setLocation] = useState(Location.SEOUL)
   const toggleLocation = () => {
     const searchParam = getSearchParam()
@@ -44,7 +44,7 @@ export const AppProvider: React.FC = props => {
       const searchParam = getSearchParam()
 
       setLocation(searchParam.location || Location.SEOUL)
-      setTarget(searchParam.target || Target.DEFAULT)
+      setType(searchParam.type || Type.DEFAULT)
     }
 
     updateAppState()
@@ -61,7 +61,7 @@ export const AppProvider: React.FC = props => {
   }, [])
 
   const contextValue = {
-    target,
+    type,
     location,
     toggleLocation,
   }
@@ -78,7 +78,7 @@ export const useAppContext = () => {
 }
 
 type SearchParam = Record<string, string> & {
-  target?: Target
+  type?: Type
   location?: Location
 }
 

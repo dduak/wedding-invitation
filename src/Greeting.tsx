@@ -1,6 +1,6 @@
 import "./Greeting.css"
 import React from "react";
-import {Location, Target, useAppContext} from "./context";
+import {Location, Type, useAppContext} from "./context";
 
 const Greeting: React.FC = props => {
   const {location} = useAppContext()
@@ -31,9 +31,9 @@ const Greeting: React.FC = props => {
 
 
 const GreetingMessage: React.FC = props => {
-  const {target} = useAppContext()
+  const {type} = useAppContext()
 
-  if (target === Target.PARENTS) {
+  if (type === Type.PARENTS) {
     return (
       <p className="greeting-message">
         저희 아들과 딸이<br/>

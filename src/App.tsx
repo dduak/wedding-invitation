@@ -49,10 +49,10 @@ const ToggleLocationButton: React.FC = props => {
   )
 }
 const Layout: React.FC = props => {
-  const {target} = useAppContext()
+  const {type} = useAppContext()
 
   return (
-    <div className={`app ${target}`}>
+    <div className={`app ${type}`}>
       {props.children}
     </div>
   )
