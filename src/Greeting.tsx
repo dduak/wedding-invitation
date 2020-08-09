@@ -4,7 +4,7 @@ import {Location, Target, useAppContext} from "./context";
 
 const Greeting: React.FC = props => {
   const {location} = useAppContext()
-  const date = location === Location.SEOUL ? '2020. 09. 27' : '2020. 10. 03'
+  const date = location === Location.SEOUL ? '2020. 09. 27.' : '2020. 10. 03.'
 
   return (
     <section className="section greeting">
