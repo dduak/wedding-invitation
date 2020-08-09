@@ -101,7 +101,7 @@ function buildUrl(searchParam: SearchParam) {
   return url
 }
 
-function getSearchParam(): SearchParam {
+export function getSearchParam(): SearchParam {
   const queryStr = window.location.search.split('?')[1];
 
   if (!queryStr) {

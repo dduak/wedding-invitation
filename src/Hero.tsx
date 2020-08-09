@@ -1,13 +1,21 @@
 import "./Hero.css"
-import React from "react";
-import {Location, useAppContext} from "./context";
+import React, {useMemo} from "react";
+import {getSearchParam, Location, useAppContext} from "./context";
 
 const Hero: React.FC = props => {
   const {location} = useAppContext()
-  const img = location === Location.SEOUL ? 'main_2048.jpg' : 'main2_2048.jpg'
+  const isFormal = useMemo(() => {
+    const searchParam = getSearchParam();
+    return Boolean(searchParam.formal);
+  }, [])
+  const img = useMainImage(isFormal)
+  const containerClass = [
+    'hero',
+    isFormal ? '' : location
+  ].join(' ')
 
   return (
-    <div className={`hero ${location}`}>
+    <div className={containerClass}>
       <div className="hero-image">
         <img
           src={`${process.env.REACT_APP_PHOTO_PATH}/${img}`}
@@ -27,6 +35,16 @@ const Hero: React.FC = props => {
       <Summary/>
     </div>
   )
+}
+
+function useMainImage(isFormal: boolean) {
+  const {location} = useAppContext();
+
+  if (isFormal) {
+    return 'main_2048.jpg';
+  }
+
+  return location === Location.SEOUL ? 'main_2048.jpg' : 'main2_2048.jpg'
 }
 
 const Summary: React.FC = props => {
