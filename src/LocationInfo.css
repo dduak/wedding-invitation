@@ -54,11 +54,12 @@
 }
 
 .location-mapapp {
-  margin: .4em 0 1em;
+  margin: .6em 0 1.2em;
 }
 
 .location-mapbutton {
-  padding: 0.6em 1.2em;
+  padding: 0.8em 1em;
+  font-size: 16px;
   margin-left: .6em;
   border-radius: 4px;
   border: 0 none;
@@ -75,5 +76,7 @@
 }
 .location-mapbutton.kakao {
   color: #fff;
-  background-color: #fccf00;
+  /*background-color: #fccf00;*/
+  background-color: #f0c400; /* darker */
 }
+
