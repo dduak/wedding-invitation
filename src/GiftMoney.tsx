@@ -2,7 +2,7 @@ import 'tippy.js/dist/tippy.css';
 import './GiftMoney.css';
 import React, {useEffect, useRef} from "react";
 import ClipboardJS from "clipboard";
-import {Type, useAppContext, useIsJejuParents} from "./context";
+import {getSearchParam, Type, useAppContext} from "./context";
 import Tippy from '@tippyjs/react';
 import {trackPressAccountNumber, trackPressGiftMoneyButton} from "./tracking";
 
@@ -14,11 +14,11 @@ enum Person {
 
 const GiftMoney: React.FC = props => {
   const {type} = useAppContext()
-  const isJejuParents = useIsJejuParents()
   const isTargetingParents = type === Type.PARENTS
+  const searchParam = getSearchParam()
 
-  if (isJejuParents) {
-    return null;
+  if (Boolean(searchParam.formal)) {
+    return null
   }
 
   return (
