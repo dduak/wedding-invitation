@@ -75,12 +75,12 @@ const GiftMoney: React.FC = props => {
               <div className="gift-box-parents">
                 <b>부: </b>
                 <CopyToClipboard text="215240458241">
-                  국민 215-240-458241 양성추
+                  국민 215-24-0458241 양성추
                 </CopyToClipboard>
                 <br/>
                 <b>모: </b>
                 <CopyToClipboard text="16419260871">
-                  하나 164-192-60871 임미연
+                  국민 215201-04-193857 임미연
                 </CopyToClipboard>
               </div>
             )}
