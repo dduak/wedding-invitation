@@ -1,10 +1,19 @@
 import ReactGA from 'react-ga';
+import {getSearchParam} from "./context";
 
 
 export function initializeTracker() {
-  if (process.env.NODE_ENV !== 'development') {
-    ReactGA.initialize('UA-38155854-3');
+  const searchParam = getSearchParam()
+
+  if (Boolean(searchParam.debug)) {
+    return;
   }
+
+  if (process.env.NODE_ENV === 'development') {
+    return;
+  }
+
+  ReactGA.initialize('UA-38155854-3');
 }
 
 export function trackPageView() {
