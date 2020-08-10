@@ -84,7 +84,7 @@ const GiftMoney: React.FC = props => {
                 </CopyToClipboard>
                 <br/>
                 <b>모: </b>
-                <CopyToClipboard text="16419260871">
+                <CopyToClipboard text="21520104193857">
                   국민 215201-04-193857 임미연
                 </CopyToClipboard>
               </div>
