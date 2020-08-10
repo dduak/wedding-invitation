@@ -1,10 +1,16 @@
 import "./SpecialGuest.css";
 import React from "react";
+import {useIsJejuParents} from "./context";
 
 
 type Props = {}
 
 const SpecialGuest: React.FC<Props> = props => {
+  const isJejuParents = useIsJejuParents()
+  if (isJejuParents) {
+    return null
+  }
+
   return (
     <section className="section special">
       <div className="container">

@@ -77,6 +77,14 @@ export const useAppContext = () => {
   return useContext(AppContext)
 }
 
+export function useIsJejuParents() {
+  const {location, type} = useAppContext()
+  const isJeju = location === Location.JEJU
+  const isParentsType = type === Type.PARENTS
+
+  return isJeju && isParentsType
+}
+
 type SearchParam = Record<string, string> & {
   type?: Type
   location?: Location
@@ -101,7 +109,7 @@ function buildUrl(searchParam: SearchParam) {
   return url
 }
 
-function getSearchParam(): SearchParam {
+export function getSearchParam(): SearchParam {
   const queryStr = window.location.search.split('?')[1];
 
   if (!queryStr) {

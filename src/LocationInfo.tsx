@@ -23,13 +23,13 @@ const JejuLocationInfo: React.FC = props => {
   useEffect(() => {
     initMap({
       point,
-      zoom: 15,
+      zoom: 16,
     })
   }, [point])
   return (
     <LocationInfoLayout>
       <strong className="location-place">애플컨벤션</strong>
-      <div className="location-address">제주 서귀포시 일주동로 8796</div>
+      <div className="location-address">제주 서귀포시 일주동로 8796 (서귀여중 근처)</div>
       <MapAppArea
         name="애플컨벤션"
         point={point}
@@ -147,7 +147,7 @@ const LocationInfoLayout: React.FC = props => {
         <div className="section-title">오시는 길</div>
         <div
           id="map"
-          style={{width: '100%', height: '50vh'}}
+          style={{width: '100%', height: '40vh'}}
         />
         <div className="location-content">
           {props.children}

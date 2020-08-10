@@ -1,16 +1,23 @@
 import "./Greeting.css"
 import React from "react";
-import {Location, Type, useAppContext} from "./context";
+import {Location, Type, useAppContext, useIsJejuParents} from "./context";
 
 const Greeting: React.FC = props => {
   const {location} = useAppContext()
-  const date = location === Location.SEOUL ? '2020. 09. 27.' : '2020. 10. 03.'
+  const isJejuParents = useIsJejuParents()
+  const date = location === Location.JEJU ? '2020. 10. 03.' : '2020. 09. 27.'
 
   return (
     <section className="section greeting">
       <div className="container">
         <header className="section-title">
           <span className="number">{date}</span><br/>
+          {isJejuParents && (
+            <>
+              신랑측 피로연에
+              <span className="br-on-mobile"> </span>
+            </>
+          )}
           초대합니다
         </header>
 
@@ -29,14 +36,15 @@ const Greeting: React.FC = props => {
   )
 }
 
-
 const GreetingMessage: React.FC = props => {
   const {type} = useAppContext()
+  const isJejuParents = useIsJejuParents()
+  const target = isJejuParents ? '저희 장남이 아름다운 신부와 함께' : '저희 아들과 딸이'
 
   if (type === Type.PARENTS) {
     return (
       <p className="greeting-message">
-        저희 아들과 딸이<br/>
+        {target}<br/>
         사랑과 믿음으로 한 가정을 이루고자<br/>
         혼인의 예를 올립니다.<br/>
         귀한 걸음 하시어<br/>
@@ -64,5 +72,6 @@ const GreetingMessage: React.FC = props => {
     </p>
   )
 }
+
 
 export default Greeting
