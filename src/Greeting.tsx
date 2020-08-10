@@ -1,6 +1,6 @@
 import "./Greeting.css"
 import React from "react";
-import {Location, Type, useAppContext} from "./context";
+import {Location, Type, useAppContext, useIsJejuParents} from "./context";
 
 const Greeting: React.FC = props => {
   const {location} = useAppContext()
@@ -71,14 +71,6 @@ const GreetingMessage: React.FC = props => {
       큰 기쁨이겠습니다.
     </p>
   )
-}
-
-function useIsJejuParents() {
-  const {location, type} = useAppContext()
-  const isJeju = location === Location.JEJU
-  const isParentsType = type === Type.PARENTS
-
-  return isJeju && isParentsType
 }
 
 
