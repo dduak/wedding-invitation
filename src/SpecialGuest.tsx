@@ -31,7 +31,7 @@ const SpecialGuest: React.FC<Props> = props => {
             사회를 부탁한다는 말에 자신외에 누가 하겠느냐며 흔쾌히 수락해 주었습니다 💪
           </Guest>
           <Guest
-            photo="/guests/gyu.png"
+            photo="/guests/gg.png"
             name="규홍&기은"
             role="축가"
           >
