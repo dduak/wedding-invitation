@@ -4,6 +4,27 @@ import {Location, useAppContext} from "./context";
 import { locationSVG, centerDirectionSVG } from "./svgIcons";
 
 
+enum MapAppType {
+  NAVER = 'naver',
+  KAKAO = 'kakao'
+}
+
+enum Spot {
+  ARTES = '아르테스웨딩홀',
+  APPLE = '애플컨벤션'
+}
+
+const mapWebUrl = {
+  [Spot.ARTES]: {
+    [MapAppType.NAVER]: 'https://map.naver.com/v5/search/%EC%95%84%EB%A5%B4%ED%85%8C%EC%8A%A4%EC%9B%A8%EB%94%A9/place/11864028',
+    [MapAppType.KAKAO]: 'https://map.kakao.com/?itemId=22869439',
+  },
+  [Spot.APPLE]: {
+    [MapAppType.NAVER]: 'https://map.naver.com/v5/search/%EC%95%A0%ED%94%8C%EC%BB%A8%EB%B2%A4%EC%85%98/place/1323655643',
+    [MapAppType.KAKAO]: 'https://map.kakao.com/?itemId=1742853888',
+  }
+}
+
 const LocationInfo: React.FC = props => {
   const {location} = useAppContext()
 
@@ -31,7 +52,7 @@ const JejuLocationInfo: React.FC = props => {
       <strong className="location-place">애플컨벤션</strong>
       <div className="location-address">제주 서귀포시 일주동로 8796 (서귀여중 근처)</div>
       <MapAppArea
-        name="애플컨벤션"
+        name={Spot.APPLE}
         point={point}
       />
     </LocationInfoLayout>
@@ -57,7 +78,7 @@ const SeoulLocationInfo: React.FC = props => {
       <strong className="location-place">아르테스웨딩</strong>
       <div className="location-address">서울 동작구 동작대로 59 쌍립빌딩 2층 (사당 교보타워 2층)</div>
       <MapAppArea
-        name="아르테스웨딩홀"
+        name={Spot.ARTES}
         point={point}
       />
       <dl>
@@ -79,13 +100,8 @@ const SeoulLocationInfo: React.FC = props => {
   )
 }
 
-enum MapAppType {
-  NAVER = 'naver',
-  KAKAO = 'kakao'
-}
-
 const MapAppArea: React.FC<{
-  name: string
+  name: Spot
   point: {
     lat: number
     lng: number
@@ -111,7 +127,7 @@ const MapAppArea: React.FC<{
 
 const MapButton: React.FC<{
   type: MapAppType
-  name: string
+  name: Spot
   point: {
     lat: number
     lng: number
@@ -122,10 +138,16 @@ const MapButton: React.FC<{
   const isNaverMap = type === MapAppType.NAVER
   const appText = isNaverMap ? '네이버맵' : '카카오맵'
   const handleClick = () => {
-    if (isNaverMap) {
-      window.location.href = `nmap://route/car?dlat=${lat}&dlng=${lng}&dname=${encodeURI(name)}&appname=https://jinwoohyesook.xyz`;
+    const urlEncodedName = encodeURI(name)
+
+    if (isAppSupportedPlatform()) {
+      if (isNaverMap) {
+        window.location.href = `nmap://route/car?dlat=${lat}&dlng=${lng}&dname=${urlEncodedName}}&appname=https://jinwoohyesook.xyz`;
+      } else {
+        window.location.href = `kakaomap://route?ep=${lat},${lng}&by=CAR`;
+      }
     } else {
-      window.location.href = `kakaomap://route?ep=${lat},${lng}&by=CAR`;
+      window.open(mapWebUrl[name][type], '_blank')
     }
   }
 
@@ -210,6 +232,14 @@ function initMap(options: MapOptions) {
       map.setCenter(weddingHallLatLng);
     });
   });
+}
+
+function isAppSupportedPlatform() {
+  const userAgent = navigator.userAgent.toLowerCase()
+  const isIphone = userAgent.indexOf('iphone') > -1
+  const isAndroid = userAgent.indexOf('android') > -1
+
+  return  isIphone || isAndroid
 }
 
 export default LocationInfo
