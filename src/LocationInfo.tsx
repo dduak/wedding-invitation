@@ -141,11 +141,22 @@ const MapButton: React.FC<{
     const urlEncodedName = encodeURI(name)
 
     if (isAppSupportedPlatform()) {
+      const start = new Date().getTime()
+
       if (isNaverMap) {
-        window.location.href = `nmap://route/car?dlat=${lat}&dlng=${lng}&dname=${urlEncodedName}}&appname=https://jinwoohyesook.xyz`;
+        window.location.href = `nmap://route/car?dlat=${lat}&dlng=${lng}&dname=${urlEncodedName}&appname=https://jinwoohyesook.xyz`;
       } else {
         window.location.href = `kakaomap://route?ep=${lat},${lng}&by=CAR`;
       }
+
+      const TIMEOUT = 1000
+
+      setTimeout(() => {
+        const elapsedTime = new Date().getTime() - start
+        if (elapsedTime < TIMEOUT + 500) {
+          window.location.href = mapWebUrl[name][type]
+        }
+      }, TIMEOUT)
     } else {
       window.open(mapWebUrl[name][type], '_blank')
     }
