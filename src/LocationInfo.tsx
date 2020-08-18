@@ -152,9 +152,11 @@ const MapButton: React.FC<{
         window.location.href = `kakaomap://route?ep=${lat},${lng}&by=CAR`;
       }
 
-      if (window.confirm('지도 웹페이지를 여시겠습니까?')) {
-        window.location.href = mapWebUrl[name][type]
-      }
+      setTimeout(() => {
+        if (window.confirm('지도 웹페이지를 여시겠습니까?')) {
+          window.location.href = mapWebUrl[name][type]
+        }
+      }, 600)
     } else {
       window.open(mapWebUrl[name][type], '_blank')
     }
