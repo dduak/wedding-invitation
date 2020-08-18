@@ -138,25 +138,25 @@ const MapButton: React.FC<{
   const isNaverMap = type === MapAppType.NAVER
   const appText = isNaverMap ? '네이버맵' : '카카오맵'
   const handleClick = () => {
-    const urlEncodedName = encodeURI(name)
 
     if (isAppSupportedPlatform()) {
-      const start = new Date().getTime()
-
       if (isNaverMap) {
-        window.location.href = `nmap://route/car?dlat=${lat}&dlng=${lng}&dname=${urlEncodedName}&appname=https://jinwoohyesook.xyz`;
+        const params = [
+          `dlat=${lat}`,
+          `dlng=${lng}`,
+          `dname=${encodeURI(name)}`,
+          `appname=https://jinwoohyesook.xyz`
+        ].join('&');
+        window.location.href = `nmap://route/car?${params}`;
       } else {
         window.location.href = `kakaomap://route?ep=${lat},${lng}&by=CAR`;
       }
 
-      const TIMEOUT = 1000
-
       setTimeout(() => {
-        const elapsedTime = new Date().getTime() - start
-        if (elapsedTime < TIMEOUT + 500) {
+        if (window.confirm('지도 웹페이지를 여시겠습니까?')) {
           window.location.href = mapWebUrl[name][type]
         }
-      }, TIMEOUT)
+      }, 600)
     } else {
       window.open(mapWebUrl[name][type], '_blank')
     }
