@@ -5,7 +5,7 @@ import {Location, Type, useAppContext, useIsJejuParents} from "./context";
 const Greeting: React.FC = props => {
   const {location} = useAppContext()
   const isJejuParents = useIsJejuParents()
-  const date = location === Location.JEJU ? '2020. 10. 03.' : '2020. 09. 27.'
+  const date = location === Location.JEJU ? '2020. 10. 03.' : '2020. 10. 25.'
 
   return (
     <section className="section greeting">

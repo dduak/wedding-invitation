@@ -50,7 +50,7 @@ function useMainImage(isFormal: boolean) {
 const Summary: React.FC = props => {
   const { location } = useAppContext()
   const isJeju = location === Location.JEJU
-  const datetime = isJeju ? '2020년 10월 03일 (토)' : '2020년 09월 27일 (일) 오후 2시'
+  const datetime = isJeju ? '2020년 10월 03일 (토)' : '2020년 10월 25일 (일) 오후 1시'
   const place = isJeju ? ' 애플컨벤션 in 제주' : '아르테스웨딩 in 서울'
 
   return (
