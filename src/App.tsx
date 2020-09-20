@@ -5,6 +5,7 @@ import {trackPageView} from "./tracking";
 import Gallery from "./Gallery";
 import Greeting from "./Greeting";
 import LocationInfo from "./LocationInfo";
+import ContactInfo from "./ContactInfo";
 import GiftMoney from "./GiftMoney";
 import Hero from "./Hero";
 import Poet from "./Poet";
@@ -37,6 +38,7 @@ const App: React.FC = () => {
         <Gallery/>
         <SpecialGuest/>
         <LocationInfo/>
+        <ContactInfo/>
         <GiftMoney/>
         <Footer/>
       </Layout>
