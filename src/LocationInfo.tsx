@@ -51,7 +51,7 @@ const JejuLocationInfo: React.FC = props => {
     <LocationInfoLayout>
       <strong className="location-place">애플컨벤션</strong>
       <span className="location-place-tel">
-          (<span role="img" aria-label="tel">☎️</span>️ <a href="tel:064-732-7750">064-732-7750</a>)
+          (<span role="img" aria-label="tel">☎</span> <a href="tel:064-732-7750">064-732-7750</a>)
       </span>
       <div className="location-address">제주 서귀포시 일주동로 8796 (서귀여중 근처)</div>
       <MapAppArea
@@ -80,7 +80,7 @@ const SeoulLocationInfo: React.FC = props => {
     <LocationInfoLayout>
       <strong className="location-place">아르테스웨딩</strong>
       <span className="location-place-tel">
-          (<span role="img" aria-label="tel">☎️</span>️ <a href="tel:02-525-3388">02-525-3388</a>)
+          (<span role="img" aria-label="tel">☎</span> <a href="tel:02-525-3388">02-525-3388</a>)
       </span>
       <div className="location-address">서울 동작구 동작대로 59 쌍립빌딩 2층 (사당 교보타워 2층)</div>
       <MapAppArea
