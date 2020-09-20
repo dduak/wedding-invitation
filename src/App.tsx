@@ -14,6 +14,17 @@ import ToggleLocationButton from "./ToggleLocationButton";
 const App: React.FC = () => {
   useEffect(() => {
     trackPageView();
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', event => {
+        event.preventDefault();
+        const target = event.currentTarget
+
+        // @ts-ignore
+        document.querySelector(target?.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   }, [])
 
   return (

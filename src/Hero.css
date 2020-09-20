@@ -74,3 +74,11 @@
   margin-top: .5vh;
   line-height: 1.6;
 }
+.summary-link-to-location {
+  font-size: .8em;
+  display: inline-block;
+  margin-left: .4em;
+}
+.summary-link-to-location a {
+  color: #222222;
+}
