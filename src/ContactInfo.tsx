@@ -33,7 +33,7 @@ const ContactInfo: React.FC<Props> = props => {
               신부
             </div>
             <b>양혜숙</b>
-            <a href="tel:010-5094-5247">010-5094-5247</a>
+            <a href="tel:010-5093-5247">010-5093-5247</a>
             <br/>
             <div className="contact-box-parents">
               부: <b>양성추</b>
