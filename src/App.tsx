@@ -5,6 +5,7 @@ import {trackPageView} from "./tracking";
 import Gallery from "./Gallery";
 import Greeting from "./Greeting";
 import LocationInfo from "./LocationInfo";
+import ContactInfo from "./ContactInfo";
 import GiftMoney from "./GiftMoney";
 import Hero from "./Hero";
 import Poet from "./Poet";
@@ -14,6 +15,17 @@ import ToggleLocationButton from "./ToggleLocationButton";
 const App: React.FC = () => {
   useEffect(() => {
     trackPageView();
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', event => {
+        event.preventDefault();
+        const target = event.currentTarget
+
+        // @ts-ignore
+        document.querySelector(target?.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   }, [])
 
   return (
@@ -26,6 +38,7 @@ const App: React.FC = () => {
         <Gallery/>
         <SpecialGuest/>
         <LocationInfo/>
+        <ContactInfo/>
         <GiftMoney/>
         <Footer/>
       </Layout>

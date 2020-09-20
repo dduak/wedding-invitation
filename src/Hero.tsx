@@ -61,6 +61,9 @@ const Summary: React.FC = props => {
       <div className="summary-meta">
         {datetime}<br/>
         {place}
+        <span className="summary-link-to-location">
+          (<a href="#location-info">오시는 길↓</a>)
+        </span>
       </div>
     </div>
   )

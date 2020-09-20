@@ -50,6 +50,9 @@ const JejuLocationInfo: React.FC = props => {
   return (
     <LocationInfoLayout>
       <strong className="location-place">애플컨벤션</strong>
+      <span className="location-place-tel">
+          (<span role="img" aria-label="tel">☎️</span>️ <a href="tel:064-732-7750">064-732-7750</a>)
+      </span>
       <div className="location-address">제주 서귀포시 일주동로 8796 (서귀여중 근처)</div>
       <MapAppArea
         name={Spot.APPLE}
@@ -76,6 +79,9 @@ const SeoulLocationInfo: React.FC = props => {
   return (
     <LocationInfoLayout>
       <strong className="location-place">아르테스웨딩</strong>
+      <span className="location-place-tel">
+          (<span role="img" aria-label="tel">☎️</span>️ <a href="tel:02-525-3388">02-525-3388</a>)
+      </span>
       <div className="location-address">서울 동작구 동작대로 59 쌍립빌딩 2층 (사당 교보타워 2층)</div>
       <MapAppArea
         name={Spot.ARTES}
@@ -175,7 +181,7 @@ const MapButton: React.FC<{
 
 const LocationInfoLayout: React.FC = props => {
   return (
-    <section className="section location">
+    <section className="section location" id="location-info">
       <div className="container">
         <div className="section-title">오시는 길</div>
         <div

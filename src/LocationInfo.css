@@ -34,6 +34,14 @@
 .location-place {
   border-bottom: 2px dashed rgba(172, 183, 191, 0.4);
 }
+.location-place-tel {
+  font-size: .8em;
+  display: inline-block;
+  margin-left: .4em;
+}
+.location-place-tel a {
+  color: #222222;
+}
 .location-address {
   margin-top: .5em;
 }
