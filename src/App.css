@@ -71,6 +71,15 @@ body {
   font-family: sans-serif;
   color: #dfdfdf;
 }
+.footer a {
+  color: #ddd;
+}
+.footer a:visited {
+  color: #ddd;
+}
+.footer a:hover {
+  color: #ccc;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   /* animation's here */

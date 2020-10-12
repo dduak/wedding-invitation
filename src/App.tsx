@@ -60,6 +60,11 @@ const Footer: React.FC = props => {
   return (
     <footer className="footer">
       &copy; Jinwoo&amp;Hyesook
+      {` `}
+      <br/>
+      <small>
+        (<a href="https://github.com/dduak/wedding-invitation">GitHub</a>)
+      </small>
     </footer>
   )
 }
