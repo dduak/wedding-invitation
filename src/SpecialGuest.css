@@ -55,6 +55,13 @@
   color: darkblue;
   text-decoration: none;
 }
+.special-guest hr {
+  height: 0;
+  border-width: 1px 0 0;
+  border-color: #efefef;
+  border-style: dashed;
+  margin: 1em 0;
+}
 @media (max-width: 640px) {
   .special-guest {
     padding: 1.2em .8em;
