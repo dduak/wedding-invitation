@@ -151,7 +151,7 @@ const MapButton: React.FC<{
           `dlat=${lat}`,
           `dlng=${lng}`,
           `dname=${encodeURI(name)}`,
-          `appname=https://jinwoohyesook.xyz`
+          `appname=dduak-wedding`
         ].join('&');
         window.location.href = `nmap://route/car?${params}`;
       } else {
