@@ -2,7 +2,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e4fbdcd9-2365-4209-915e-bb99006ae7cc/deploy-status)](https://app.netlify.com/sites/dduak-wedding/deploys)
 
-👉 https://jinwoohyesook.netlify.app
+* ~~https://jinwoohyesook.xyz~~
+  * Archived: https://web.archive.org/web/20210725014848/https://jinwoohyesook.xyz/
+* Mirror: https://jinwoohyesook.netlify.app
 
 
 ## LICENSE
