@@ -35,18 +35,19 @@ const LocationInfo: React.FC = props => {
   return <JejuLocationInfo/>
 }
 
-const JejuLocationInfo: React.FC = props => {
-  const point = {
-    lat: 33.2539426,
-    lng: 126.5494984
-  };
+const jejuLocationLatLng = {
+  lat: 33.2539426,
+  lng: 126.5494984
+};
 
+const JejuLocationInfo: React.FC = props => {
   useEffect(() => {
     initMap({
-      point,
+      point: jejuLocationLatLng,
       zoom: 16,
     })
-  }, [point])
+  }, [])
+
   return (
     <LocationInfoLayout>
       <strong className="location-place">애플컨벤션</strong>
@@ -56,25 +57,24 @@ const JejuLocationInfo: React.FC = props => {
       <div className="location-address">제주 서귀포시 일주동로 8796 (서귀여중 근처)</div>
       <MapAppArea
         name={Spot.APPLE}
-        point={point}
+        point={jejuLocationLatLng}
       />
     </LocationInfoLayout>
   )
 }
 
+const seoulLocationLatLng = {
+  lat: 37.4820097,
+  lng: 126.9814984
+}
 
 const SeoulLocationInfo: React.FC = props => {
-  const point = {
-    lat: 37.4820097,
-    lng: 126.9814984
-  }
-
   useEffect(() => {
     initMap({
-      point,
+      point: seoulLocationLatLng,
       zoom: 13,
     })
-  }, [point])
+  }, [])
 
   return (
     <LocationInfoLayout>
@@ -85,7 +85,7 @@ const SeoulLocationInfo: React.FC = props => {
       <div className="location-address">서울 동작구 동작대로 59 쌍립빌딩 2층 (사당 교보타워 2층)</div>
       <MapAppArea
         name={Spot.ARTES}
-        point={point}
+        point={seoulLocationLatLng}
       />
       <dl>
         <dt>지하철</dt>
