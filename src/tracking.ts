@@ -1,4 +1,4 @@
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 import {getSearchParam} from "./context";
 
 
@@ -13,11 +13,14 @@ export function initializeTracker() {
     return;
   }
 
-  ReactGA.initialize('UA-38155854-3');
+  ReactGA.initialize('G-FXM4BNBKLT');
 }
 
 export function trackPageView() {
-  ReactGA.pageview(window.location.pathname + window.location.search)
+  ReactGA.send({
+    hitType: 'pageview',
+    page: window.location.pathname + window.location.search,
+  })
 }
 
 export function trackChangeLocation(location: string) {
