@@ -1,7 +1,7 @@
 import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
 import './Gallery.css';
-import React, {forwardRef, useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import {FC, forwardRef, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import PhotoSwipe from 'photoswipe';
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
 import {trackPhotoView, trackPressThumbnail} from "./tracking";
@@ -44,7 +44,7 @@ type Item = {
   h: number
 }
 
-const Gallery: React.FC<Props> = props => {
+const Gallery: FC<Props> = props => {
   const [items, setItems] = useState<Item[]>([])
   const rows = useMemo(() => {
     const rows:Item[][] = []

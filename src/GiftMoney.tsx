@@ -1,6 +1,6 @@
 import 'tippy.js/dist/tippy.css';
 import './GiftMoney.css';
-import React, {useEffect, useRef} from "react";
+import {FC, ReactNode, useEffect, useRef} from "react";
 import ClipboardJS from "clipboard";
 import {getSearchParam, Type, useAppContext} from "./context";
 import Tippy from '@tippyjs/react';
@@ -12,7 +12,7 @@ enum Person {
   Ddugi = 'Ddugi',
 }
 
-const GiftMoney: React.FC = props => {
+const GiftMoney: FC = props => {
   const {type} = useAppContext()
   const isTargetingParents = type === Type.PARENTS
   const searchParam = getSearchParam()
@@ -105,8 +105,9 @@ const GiftMoney: React.FC = props => {
   )
 }
 
-const CopyToClipboard: React.FC<{
+const CopyToClipboard: FC<{
   text: string
+  children: ReactNode
 }> = props => {
   const elRef = useRef<HTMLSpanElement>(null)
   useEffect(() => {
@@ -145,7 +146,7 @@ const CopyToClipboard: React.FC<{
   )
 }
 
-const KakaoPayButton: React.FC<{ type: Person }> = props => {
+const KakaoPayButton: FC<{ type: Person }> = props => {
   const mapping = {
     [Person.Aki]: '281006011000000743345432',
     [Person.Ddugi]: '281006011000081348447563',

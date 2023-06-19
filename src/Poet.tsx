@@ -1,7 +1,7 @@
 import './Poet.css';
-import React from "react";
+import {FC} from "react";
 
-const Poet: React.FC = props => {
+const Poet: FC = props => {
   return (
     <section className="poet section">
       <Feather/>
@@ -18,7 +18,7 @@ const Poet: React.FC = props => {
   )
 }
 
-const Feather: React.FC = props => {
+const Feather: FC = props => {
   return (
     <svg
       className="poet-feather"

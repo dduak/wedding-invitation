@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useEffect, useState} from "react";
+import {FC, ReactNode, createContext, useContext, useEffect, useState} from "react";
 import {trackChangeLocation} from "./tracking";
 
 
@@ -17,7 +17,7 @@ const AppContext = createContext({
   toggleLocation: () => {},
 })
 
-export const AppProvider: React.FC = props => {
+export const AppProvider: FC<{ children: ReactNode }> = props => {
   const [type, setType] = useState(Type.DEFAULT)
   const [location, setLocation] = useState(Location.SEOUL)
   const toggleLocation = () => {

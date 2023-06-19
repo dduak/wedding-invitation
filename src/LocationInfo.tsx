@@ -1,5 +1,5 @@
 import "./LocationInfo.css"
-import React, {useEffect} from "react";
+import {FC, ReactNode, useEffect} from "react";
 import {Location, useAppContext} from "./context";
 import { locationSVG, centerDirectionSVG } from "./svgIcons";
 
@@ -25,7 +25,7 @@ const mapWebUrl = {
   }
 }
 
-const LocationInfo: React.FC = props => {
+const LocationInfo: FC = props => {
   const {location} = useAppContext()
 
   if (location === Location.SEOUL) {
@@ -36,11 +36,11 @@ const LocationInfo: React.FC = props => {
 }
 
 const jejuLocationLatLng = {
-  lat: 33.2539426,
-  lng: 126.5494984
+    lat: 33.2539426,
+    lng: 126.5494984
 };
 
-const JejuLocationInfo: React.FC = props => {
+const JejuLocationInfo: FC = props => {
   useEffect(() => {
     initMap({
       point: jejuLocationLatLng,
@@ -64,11 +64,11 @@ const JejuLocationInfo: React.FC = props => {
 }
 
 const seoulLocationLatLng = {
-  lat: 37.4820097,
-  lng: 126.9814984
+    lat: 37.4820097,
+    lng: 126.9814984
 }
 
-const SeoulLocationInfo: React.FC = props => {
+const SeoulLocationInfo: FC = props => {
   useEffect(() => {
     initMap({
       point: seoulLocationLatLng,
@@ -106,7 +106,7 @@ const SeoulLocationInfo: React.FC = props => {
   )
 }
 
-const MapAppArea: React.FC<{
+const MapAppArea: FC<{
   name: Spot
   point: {
     lat: number
@@ -131,7 +131,7 @@ const MapAppArea: React.FC<{
   )
 }
 
-const MapButton: React.FC<{
+const MapButton: FC<{
   type: MapAppType
   name: Spot
   point: {
@@ -179,7 +179,7 @@ const MapButton: React.FC<{
   )
 }
 
-const LocationInfoLayout: React.FC = props => {
+const LocationInfoLayout: FC<{ children: ReactNode }> = props => {
   return (
     <section className="section location" id="location-info">
       <div className="container">

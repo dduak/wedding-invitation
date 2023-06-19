@@ -1,9 +1,9 @@
 import "./ToggleLocationButton.css";
 import Tippy from "@tippyjs/react";
-import React from "react";
+import {FC} from "react";
 import {Location, useAppContext} from "./context";
 
-const ToggleLocationButton: React.FC = props => {
+const ToggleLocationButton: FC = props => {
   const {location, toggleLocation} = useAppContext()
   const nextTarget = location === Location.JEJU ? '서울본식 💒' : '제주잔치 🎊'
 

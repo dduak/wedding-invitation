@@ -1,8 +1,8 @@
 import "./Hero.css"
-import React, {useMemo} from "react";
+import {FC, useMemo} from "react";
 import {getSearchParam, Location, useAppContext} from "./context";
 
-const Hero: React.FC = props => {
+const Hero: FC = props => {
   const {location} = useAppContext()
   const isFormal = useMemo(() => {
     const searchParam = getSearchParam();
@@ -47,7 +47,7 @@ function useMainImage(isFormal: boolean) {
   return location === Location.SEOUL ? 'main_2048.jpg' : 'main2_2048.jpg'
 }
 
-const Summary: React.FC = props => {
+const Summary: FC = props => {
   const { location } = useAppContext()
   const isJeju = location === Location.JEJU
   const datetime = isJeju ? '2020년 10월 03일 (토) 오전 10시~오후 7시' : '2020년 10월 25일 (일) 오후 1시'

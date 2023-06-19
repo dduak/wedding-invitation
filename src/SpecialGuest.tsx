@@ -1,11 +1,11 @@
 import "./SpecialGuest.css";
-import React from "react";
+import {FC, ReactNode} from "react";
 import {useIsJejuParents} from "./context";
 
 
 type Props = {}
 
-const SpecialGuest: React.FC<Props> = props => {
+const SpecialGuest: FC<Props> = props => {
   const isJejuParents = useIsJejuParents()
   if (isJejuParents) {
     return null
@@ -76,10 +76,11 @@ const SpecialGuest: React.FC<Props> = props => {
   )
 }
 
-const Guest: React.FC<{
+const Guest: FC<{
   photo: string
   name: string
   role: string
+  children: ReactNode
 }> = props => {
   return (
     <div className="special-guest">

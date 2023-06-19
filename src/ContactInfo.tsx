@@ -1,10 +1,9 @@
-import React from 'react'
+import {FC} from 'react'
 import './ContactInfo.css'
-
 
 type Props = {}
 
-const ContactInfo: React.FC<Props> = props => {
+const ContactInfo: FC<Props> = props => {
   return (
     <section className="section contact">
       <div className="container">

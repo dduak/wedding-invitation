@@ -1,5 +1,5 @@
 import "./App.css";
-import React, {useEffect} from "react";
+import {FC, ReactNode, useEffect} from "react";
 import {AppProvider, useAppContext} from "./context";
 import {trackPageView} from "./tracking";
 import Gallery from "./Gallery";
@@ -12,7 +12,7 @@ import Poet from "./Poet";
 import SpecialGuest from "./SpecialGuest";
 import ToggleLocationButton from "./ToggleLocationButton";
 
-const App: React.FC = () => {
+const App: FC = () => {
   useEffect(() => {
     trackPageView();
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -46,7 +46,7 @@ const App: React.FC = () => {
   );
 }
 
-const Layout: React.FC = props => {
+const Layout: FC<{ children: ReactNode }> = props => {
   const {type} = useAppContext()
 
   return (
@@ -56,7 +56,7 @@ const Layout: React.FC = props => {
   )
 }
 
-const Footer: React.FC = props => {
+const Footer: FC = props => {
   return (
     <footer className="footer">
       &copy; Jinwoo&amp;Hyesook

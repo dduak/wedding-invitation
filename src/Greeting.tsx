@@ -1,8 +1,8 @@
 import "./Greeting.css"
-import React from "react";
+import {FC} from "react";
 import {Location, Type, useAppContext, useIsJejuParents} from "./context";
 
-const Greeting: React.FC = props => {
+const Greeting: FC = props => {
   const {location} = useAppContext()
   const isJejuParents = useIsJejuParents()
   const date = location === Location.JEJU ? '2020. 10. 03.' : '2020. 10. 25.'
@@ -36,7 +36,7 @@ const Greeting: React.FC = props => {
   )
 }
 
-const GreetingMessage: React.FC = props => {
+const GreetingMessage: FC = props => {
   const {type} = useAppContext()
   const isJejuParents = useIsJejuParents()
   const target = isJejuParents ? '저희 장남이 아름다운 신부와 함께' : '저희 아들과 딸이'
